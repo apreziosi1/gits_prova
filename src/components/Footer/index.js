@@ -8,7 +8,7 @@ import linkImdb from '../../images/icons/IMDB.png'
 
 
 const FooterWrapper = styled.div`
-    ${tw`relative flex flex-col xl:flex-row justify-center bg-gits_violet`}
+    ${tw`flex flex-col xl:flex-row justify-center bg-gits_violet`}
 `;
 
 const FooterInfo = styled.div`
@@ -32,10 +32,10 @@ const FooterRow2 = styled.div`
 `;
 
 const FooterSep = styled.div`
-    ${tw`border-white border-2 m-8 h-3/6`}
+    ${tw`border-white border-2 m-1 md:m-8 h-3/6`}
 `;
 
-const WebLink = styled.a`
+export const WebLink = styled.a`
     ${tw`cursor-pointer text-gits_blue hover:text-gits_rusty m-2`}
 `;
 

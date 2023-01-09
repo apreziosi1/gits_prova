@@ -26,7 +26,7 @@ const Layout = ({ children, location }) => {
     // <div className="flex w-screen flex-col mx-auto" ref={ref}>
     <>
       <Header ref={headerRef} />
-      <main className="w-screen h-screen" ref={ref}>
+      <main className="flex" ref={ref}>
         {children}
       </main>
       <Footer ref={footerRef} />

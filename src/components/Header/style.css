@@ -1,5 +1,10 @@
+.MenuItem{
+    text-decoration: none;
+}
+
 .active {
     background-color: #7A728A;
+    text-decoration: none;
 }
 
 .MenuItem:hover:not(.active) {

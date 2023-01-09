@@ -1,10 +1,14 @@
 module.exports = {
   theme: {
+    fontFamily: {
+      'sans': ['"League Spartan"', 'Roboto', 'sans-serif']
+    },
     extend: {
       colors: {
         gits_white: '#E6E4DD',
         gits_blue: '#202F46',
         gits_violet: '#7A728A',
+        gits_darkviolet: '#807292',
         gits_rusty: '#AE680F',
         gits_lightblue: '#178F9D'
       },

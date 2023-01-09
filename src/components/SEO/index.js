@@ -15,7 +15,7 @@ const SEO = ({
   author,
   article,
   meta,
-  location,
+  location
 }) => {
   // non funziona con l'Hook use location
   // const { pathname } = useLocation();

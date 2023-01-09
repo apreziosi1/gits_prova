@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import Layout from 'layouts/Clean';
 import { SEO, Header } from 'components';
-import { HomeCover } from '../components/body';
+import { HomePage } from '../components/body';
 
 const IndexPage = ({ location }) => {
   return (
@@ -18,7 +18,7 @@ const IndexPage = ({ location }) => {
           description="Homepage di Ghost in the Shell"
           location={location}
         />
-        <HomeCover />
+          <HomePage />
       </Layout>
     </>
   );

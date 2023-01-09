@@ -128,6 +128,6 @@ module.exports = {
         // Defaults to false
         enableWebVitalsTracking: true,
       },
-    },
+    }
   ],
 };

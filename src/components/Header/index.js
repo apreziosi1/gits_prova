@@ -9,7 +9,7 @@ const isActive = ({ isCurrent }) => {
 }
 
 const NavWrapper = styled.nav`
-    ${tw`bg-black fixed top-0 w-full flex flex-col md:flex-row justify-center tracking-wide font-semibold`}
+    ${tw`bg-black fixed top-0 w-full flex flex-col md:flex-row justify-center tracking-wide z-50 border-b-2 border-gits_violet`}
 `;
 
 const NavItem = styled.div`
