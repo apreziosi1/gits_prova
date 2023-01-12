@@ -13,7 +13,7 @@ const NavWrapper = styled.nav`
 `;
 
 const NavItem = styled.div`
-    ${tw`cursor-pointer flex-initial xl:w-56 md:w-48 justify-center text-center text-xs md:text-base text-gits_white p-6 uppercase`}
+    ${tw`cursor-pointer flex-initial xl:w-56 md:w-48 justify-center text-center text-sm md:text-lg text-gits_white p-4 uppercase`}
 `;
 
 const Header = () => (

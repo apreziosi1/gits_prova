@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Spartan Regular';
+    src: local('Spartan Regular'), url('./Spartan-Regular.ttf') format('ttf');
+  }
+  @font-face {
+    font-family: 'Spartan-Semibold.ttf';
+    font-style: semibold;
+    src: local('Spartan Semibold'), url('./Spartan-Semibold.ttf') format('ttf');
+  }
