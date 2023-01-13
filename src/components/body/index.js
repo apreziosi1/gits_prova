@@ -1,8 +1,7 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import { regia1, regia2, bio1, bio2, bio3, bio4, bio5, bio6, quote1, quote2, quote3, quote4, quote5, quote6 } from '../texts';
+import { sinossi, info, description, characters, regia1, regia2, bio1, bio2, bio3, bio4, bio5, bio6, quote1, quote2, quote3, quote4, quote5, quote6 } from '../texts';
 import homeHeader from '../../images/home-header.png'
 import movieHeader from '../../images/movie-header.png'
 import poster1 from '../../images/poster1.png'
@@ -26,12 +25,13 @@ const BorderContainer = styled.div`
 `;
 
 const ImgRow = styled.div`
+    display: flex;
+    flex-direction: column;
     ${tw`flex flex-col justify-center`};
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 640px) {
         display: grid;
-        place-items: center;
+        justify-content: space-between;
         grid-template-columns: ${props => props.gridTemplate};
-        column-gap: 1em;
         }
       }
 `;
@@ -53,6 +53,10 @@ const CharacterImg = styled.div`
         width:100%; 
         height:100%;
         background-image: ${props => props.backgroundImage};
+        background-image: ${props => props.backgroundImageMin};
+        @media (min-width: 1368px) {
+            background-image: ${props => props.backgroundImageMax};
+        }
     }
 `;
 
@@ -95,7 +99,7 @@ function TextOnImageCenter(props) {
                     {props.Text1}
                 </ContentP>
                 <div className='relative'>
-                <CharacterImg position="absolute" backgroundImage={props.gradient}>
+                <CharacterImg position="absolute" backgroundImageMin={props.gradient}>
                     <img className="m-auto max-h-[560px] w-auto" src={props.ImageSrc} alt={props.ImageSrc}/>
                 </CharacterImg>
                 </div>
@@ -116,8 +120,8 @@ function TextOnImageLeft(props) {
                 {props.Text1}
             </ContentP>
             <div className='relative'>
-            <CharacterImg position="absolute" backgroundImage={props.gradient}>
-                <img className="mx-auto max-h-[560px] w-auto" src={props.ImageSrc} alt={props.ImageSrc}/>
+            <CharacterImg position="absolute" backgroundImageMin={props.gradientMin} backgroundImageMax={props.gradientMax}>
+                <img className="mx-auto max-h-[640px] w-auto" src={props.ImageSrc} alt={props.ImageSrc}/>
             </CharacterImg>
             </div>
             <ContentP className="sm:z-20 bottom-0 min-[1368px]:absolute min-[1368px]:text-right min-[1368px]:right-0 min-[1368px]:w-3/12">
@@ -137,8 +141,8 @@ function TextOnImageRight(props) {
                 {props.Text1}
             </ContentP>
             <div className='relative'>
-            <CharacterImg position="absolute" backgroundImage={props.gradient}>
-                <img className="mx-auto max-h-[560px] w-auto" src={props.ImageSrc} alt={props.ImageSrc}/>
+            <CharacterImg position="absolute" backgroundImageMin={props.gradientMin} backgroundImageMax={props.gradientMax}>
+                <img className="mx-auto max-h-[640px] w-auto" src={props.ImageSrc} alt={props.ImageSrc}/>
             </CharacterImg>
             </div>
             <ContentP className="sm:z-20 top-0 min-[1368px]:absolute min-[1368px]:text-right min-[1368px]:right-0 min-[1368px]:w-3/12">
@@ -162,15 +166,9 @@ export const HomePage = () => (
                 allowfullscreen></iframe>
             <ContentParagraph>       
             <ContentH2>Sinossi</ContentH2>
-            <ContentP>Nell'anno 2029, i progressi nella tecnologia cibernetica hanno permesso alle persone di sostituire parti del
-            corpo e organi con quelli robotici. Anche il cervello può essere sostituito con un cyber-brain, con la possibilità, tramite esso, di accedere a
-            Internet e reti diverse. Il maggiore Motoko Kusanagi, un agente cyborg che lavora per il governo, e il suo team hanno ricevuto
-            l'incarico di rintracciare il famigerato hacker noto come "Il burattinaio" e scoprire i suoi piani.</ContentP>
+            <ContentP>{sinossi}</ContentP>
             <ContentH2 className="mt-4">Informazioni</ContentH2>
-            <ContentP>“Ghost in the Shell” (攻殻機動隊 - Kōkaku kidōtai) è un film d'animazione del 1995 diretto da Mamoru Oshii. 
-            Il soggetto è basato sul manga originale omonimo di Masamune Shirow. Prodotto in Giappone dallo studio Production I.G., il film ha avuto un
-            seguito nel 2004 intitolato “Ghost in the Shell 2 - Innocence” (イノセンス - Inosensu). Nel 2008 la pellicola originale è stata sottoposta ad un profondo restyling, con largo uso della computer
-            grafica, e ripubblicata con il titolo “Ghost in the Shell 2.0”.</ContentP>
+            <ContentP>{info}</ContentP>
             <br /><ContentP>Informazioni dettagliate alla pagina <a className="hover:text-gits_rusty" href="https://www.imdb.com/title/tt0113568/">IMDb</a></ContentP>
             </ContentParagraph>
         </ContentContainer>
@@ -186,22 +184,12 @@ export const MoviePage = () => (
             <BorderContainer flexDir="column">
                 <ContentParagraph paddingBottom="2em" width="w-full">       
                         <ContentH2>Descrizione</ContentH2>
-                        <ContentP>“Ghost in the Shell” è un anime cyberpunk del 1995 diretto da Mamoru Oshii.
-                        Il film è basato sul manga omonimo di Masamune Shirow ed è stato sceneggiato da Kazunori Itō.
-                        Il film è una co-produzione internazionale giapponese-britannica, prodotta da Kodansha, Bandai Visual e
-                        Manga Entertainment, con le animazioni dello studio Production I.G. Il film è ambientato nel Giappone del 2029 e segue le vicende di Motoko Kusanagi, un agente cyborg di sicurezza
-                        pubblica, nella sua caccia a un misterioso hacker conosciuto come "Il Burattinaio".
-                        La narrazione incorpora temi filosofici incentrati sull'identità di sé in un mondo
-                        tecnologicamente avanzato. La musica, composta da Kenji Kawai, include voci in lingua giapponese classica.
-                        La critica ha elogiato in particolare la narrazione del film, la colonna sonora e le immagini,
-                        ottenute attraverso una combinazione di animazione tradizionale e animazione CGI.
-                        Il film, che aveva un budget di oltre 10 milioni di dollari, fu inizialmente un fallimento al botteghino,
-                        prima di attirare un seguito di culto in home video.</ContentP>
+                        <ContentP>{description}</ContentP>
                 </ContentParagraph>
-                <ImgRow gridTemplate="repeat(3, minmax(0, 1fr))">
-                    <img className="h-8/12 w-auto pb-4" src={poster1} alt="poster1"/>
-                    <img className="h-8/12 w-auto pb-4" src={poster2} alt="poster2"/>
-                    <img className="h-8/12 w-auto pb-4" src={poster3} alt="poster3"/>
+                <ImgRow gridTemplate="auto auto auto">
+                    <img className="max-h-1/2 w-auto pb-4" src={poster1} alt="poster1"/>
+                    <img className="max-h-1/2 w-auto pb-4" src={poster2} alt="poster2"/>
+                    <img className="max-h-1/2 w-auto pb-4" src={poster3} alt="poster3"/>
                 </ImgRow>
             </BorderContainer>
         </ContentContainer>
@@ -214,23 +202,21 @@ export const MoviePage = () => (
         <ContentContainer backgroundColor="black">
         <BorderContainer backgroundColor="black">
             <ContentH2>Personaggi</ContentH2>
-            <ContentP className='mb-12'>
-                L'universo di Ghost in the Shell è ampio e complesso, con molti personaggi presenti nei film, nelle serie TV, nei romanzi e nei manga. Ogni serie ha un universo diverso. Per la trasposizione anime sono stati scelti alcuni tra i personaggi principali della storia principale del manga originale.
-            </ContentP>
-            <TextOnImageLeft title="Motoko Kusanagi" Text1={quote1} Text2={bio1} ImageSrc={p1} gradient="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)" />
-            <TextOnImageRight title="Batou" Text1={bio2} Text2={quote2} ImageSrc={p2} gradient="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)"/>
-            <TextOnImageLeft title="Daisuke Aramaki" Text1={quote3} Text2={bio3} ImageSrc={p3} gradient="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)" />
-            <TextOnImageRight title="Togusa" Text1={bio4} Text2={quote4} ImageSrc={p4} gradient="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)" />
-            <TextOnImageLeft title="Il Burattinaio" Text1={quote5} Text2={bio5} ImageSrc={p5} gradient="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)" />
-            <TextOnImageRight title="Nakamura" Text1={bio6} Text2={quote6} ImageSrc={p6} gradient="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)" />
+            <ContentP className='mb-12'>{characters} </ContentP>
+            <TextOnImageLeft title="Motoko Kusanagi" Text1={quote1} Text2={bio1} ImageSrc={p1} gradientMin="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 70%)" gradientMax="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)"/>
+            <TextOnImageRight title="Batou" Text1={bio2} Text2={quote2} ImageSrc={p2} gradientMin="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 70%)" gradientMax="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)"/>
+            <TextOnImageLeft title="Daisuke Aramaki" Text1={quote3} Text2={bio3} ImageSrc={p3} gradientMin="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 70%)" gradientMax="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)"/>
+            <TextOnImageRight title="Togusa" Text1={bio4} Text2={quote4} ImageSrc={p4} gradientMin="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 70%)" gradientMax="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)"/>
+            <TextOnImageLeft title="Il Burattinaio" Text1={quote5} Text2={bio5} ImageSrc={p5} gradientMin="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 70%)" gradientMax="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)"/>
+            <TextOnImageRight title="Nakamura" Text1={bio6} Text2={quote6} ImageSrc={p6} gradientMin="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 70%)" gradientMax="radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 40%)"/>
         </BorderContainer>
     </ContentContainer>
     <BodyGradient backgroundImage="linear-gradient(black, #202F46);"/>
     <ContentContainer backgroundColor="#202F46">
         <BorderContainer backgroundColor="#202F46">
             <ContentH2>Critica</ContentH2>
-            <ContentP>
-                <img className="align-baseline h-8/12 w-auto pr-8 pb-8 md:pb-0 float-left" src={poster4} alt="poster4"/>
+            <ContentP className="max-[768px]:flex max-[768px]:flex-col">
+                <img className="md:align-baseline h-8/12 w-auto pb-8 md:pr-8 md:pb-4 xl:pb-0 md:float-left" src={poster4} alt="poster4"/>
                 "Ghost in the Shell", primo anime ad essere presentato alla Mostra Internazionale d’Arte Cinematografica di Venezia (nel 1996), 
                 non ha solo contribuito a porre le fondamenta per la costruzione di un universo cinematografico che si serve di un genere, la fantascienza, per restituire allo spettatore una visione tragica 
                 e pessimistica del mondo, in cui il singolo individuo viene privato ogni giorno di più della sua individualità, ma ha anche permesso che tutte quelle riserve e quei preconcetti nei confronti 
