@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import { sinossi, info, description, characters, regia1, regia2, bio1, bio2, bio3, bio4, bio5, bio6, quote1, quote2, quote3, quote4, quote5, quote6 } from '../texts';
+import { sinossi, info, description, characters, regia1, regia2, bio1, bio2, bio3, bio4, bio5, bio6, quote1, quote2, quote3, quote4, quote5, quote6, critica } from '../texts';
 import homeHeader from '../../images/home-header.png'
 import movieHeader from '../../images/movie-header.png'
 import poster1 from '../../images/poster1.png'
@@ -217,19 +217,7 @@ export const MoviePage = () => (
             <ContentH2>Critica</ContentH2>
             <ContentP className="max-[768px]:flex max-[768px]:flex-col">
                 <img className="md:align-baseline h-8/12 w-auto pb-8 md:pr-8 md:pb-4 xl:pb-0 md:float-left" src={poster4} alt="poster4"/>
-                "Ghost in the Shell", primo anime ad essere presentato alla Mostra Internazionale d’Arte Cinematografica di Venezia (nel 1996), 
-                non ha solo contribuito a porre le fondamenta per la costruzione di un universo cinematografico che si serve di un genere, la fantascienza, per restituire allo spettatore una visione tragica 
-                e pessimistica del mondo, in cui il singolo individuo viene privato ogni giorno di più della sua individualità, ma ha anche permesso che tutte quelle riserve e quei preconcetti nei confronti 
-                dell’animazione nipponica da parte del pubblico occidentale venissero definitivamente annullati (operazione riuscita non solo grazie all’opera di Oshii, ma anche al lavoro di altri maestri come 
-                Katsuhiro Otomo e Hayao Miyazaki). Ambientato in un mondo a metà fra l’universo di Blade Runner (1982) e quello di Akira (1988), "Ghost in the Shell" è un’opera essenziale nella sua durata 
-                (appena 82 minuti) ma complessa nella struttura e tanto macchinosa quanto affascinante nella vastità delle tematiche che affronta. Il ritmo sostenuto che contraddistingue la creatura di Oshii avvolge 
-                lo spettatore in un algida membrana dove il tempo sembra fermarsi e pare ci sia spazio per concentrarsi esclusivamente sulle profonde riflessioni di tipo religioso-filosofico che la sceneggiatura firmata 
-                da Kazunori Ito fa emergere per comporre un mosaico contenutistico dal valore incontestabile. L’ingannevole percezione del reale, la deriva del progresso tecnologico, il concetto di identità e di “essere” 
-                al quale l’individuo si sente intrinsecamente legato sono questioni analizzate con inquietante e seducente lungimiranza, che si insinuano nella splendida caratterizzazione di Motoko Kusanagi, il 
-                cyborg protagonista della storia, vero e proprio precursore dell’immagine dell’eroina animata, o in carne ed ossa, sul grande schermo, e che si amalgamano insieme alla perfezione anche grazie 
-                alle solenni musiche composte da Kenji Kawai. Al di là del genere di appartenenza che sia in grado di descriverne la natura autentica nel miglior modo possibile (animazione, poliziesco, fantascienza, cyberpunk), 
-                è indubbio che "Ghost in the Shell" travalichi la mera definizione di prodotto d’intrattenimento (nonostante le sequenze d’azione frenetiche e concitate) per configurarsi come opera matura e di non semplice 
-                fruizione, che oltre ad aver precorso la narrativa della recente storia del cinema sci-fi, è riuscita a guadagnarsi un posto d’onore nella schiera dei film più apprezzati dai cultori dell’animazione mondiale.
+                {critica}
                 <div className='flex flex-col gap-8 py-8'>
                 <RustyLink href="https://www.rottentomatoes.com/m/ghost_in_the_shell">Rotten Tomatoes</RustyLink>
                 <RustyLink href="https://www.metacritic.com/movie/ghost-in-the-shell">Metacritic</RustyLink>
