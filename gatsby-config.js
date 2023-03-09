@@ -6,27 +6,24 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const siteUrl = process.env.BASE_URL ?? 'https://www.trame-digitali.it';
+const siteUrl = process.env.BASE_URL ?? 'https://www.gits-prova.com';
 
 module.exports = {
   siteMetadata: {
     lang: 'it',
-    title: 'Trame Digitali - Jam stack digital agency',
-    titleTemplate: '%s | Trame Digitali',
-    description: 'Un altro sito di Trame Digitali',
-    author: 'tech@trame-digitali.it',
+    title: '###',
+    titleTemplate: '%s',
+    description: '###',
+    author: '###',
     siteUrl: siteUrl,
     keywords: [
-      `Trame Digitali`,
-      `Web marketing`,
-      `Jam stack`,
       `gatsby`,
       `tailwind`,
       `react`,
       `tailwindcss`,
     ],
-    image: '/images/logo-full.png',
-    twitterUsername: 'DigiTrame',
+    image: '###',
+    twitterUsername: '###',
   },
 
   plugins: [
@@ -46,8 +43,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.trame-digitali.it',
-        sitemap: 'https://www.trame-digitali.it/sitemap/sitemap-0.xml',
+        host: '###',
+        sitemap: '###',
         policy: [
           {
             userAgent: '*',
@@ -68,13 +65,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Trame Digitali - Digital Web Agency`,
-        short_name: `Trame Digitali`,
+        name: `###`,
+        short_name: `###`,
         start_url: `/`,
         background_color: '#000000',
         theme_color: '#FF1D4D',
         display: `standalone`,
-        icon: `src/images/svg/logo-pitto.svg`,
+        icon: `###`,
         cache_busting_mode: 'none',
       },
     },
